@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="pl">
+<head>
+	<meta charset="utf-8">
+	<meta name="description">
+	<title>Spirala Ulama</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/png" href="favicon.png">
+	<script type="text/javascript" src = "spiral-sq.js"></script>
+	
+	
+</head>
+<body>
+<link href="https://fonts.googleapis.com/css2?family=Lato&family=Raleway:wght@100&display=swap" rel="stylesheet">
+
+
+
+	<center>
+		<div id="container">
+			<div id="header"> 
+				<h1> Spirale Ulama </h1>
+			</div>
+			
+			
+			<div id="linker">
+				<div id="menu_margin"></div>
+				<button class="topMenu" onclick="showBiography();">Notka biograficzna</button><br />
+				<button class="topMenu" onclick="showIntroduction();">Czym są spirale Ulama?</button><br />
+				<button class="topMenu" onclick="showInstruction();">Jak korzystać z generatora?</button>
+			</div>
+			<div id="biography"  class="subcontent" style="display:none;"> 
+				<button id="closeIntroduction" class="closer" onclick="closeBiography();">&times </button><br />
+				<h2>Kilka słów o twórcy</h2>
+				<p>Stanisław Ulam (ur. 1909 we Lwowie, zm. 1984 w Santa Fe) był jednym z najwybitniejszych polskich matematyków. Ukończył studia na Wydziale Ogólnym Politechniki Lwowskiej, gdzie jednym z jego wykładowców był Stefan Banach. Podczas studiów bardziej zajmował się jednak matematyką niż przedmiotami technicznymi. Po ukończeniu studiów, nie mogąc zdecydować się na wybór zawodu, postawił sobie ultimatum polegające na rozwiązaniu problemu z teorii mnogości - jeśli go rozwiąże, miał zostać matematykiem, w przeciwnym razie - elektrykiem. Ulam podołał zadaniu i w 1933 r. obronił doktoratu, wstępując tym samym do elitarnego grona matematyków lwowskich, w którym byli m.in. Stanisław Banach, Hugo Steihnhaus, Kazimierz Kuratowski czy Stanisław Mazur. </p>
+				
+				<p>W 1935 r. Ulam wyjechał do Stanów Zjednoczonych na zaproszenie Uniwersytetu w Princeton, a rok później skorzystał z oferty pracy ze strony Uniwersytetu w Harwardzie. W tym czasie spotkał się m.in. z Albertem Einsteinem. Od 1943 r. pracował w amerykańskim ośrodku badań jądrowych Los Alamos, gdzie był jendym z współtwórców projektu Manhattan, a później prac nad bombą wodorową. W tym czasie współpracował z takimi naukowcami jak John von Neumann, Enrico Fermi, George Gamow, Richard Feynman, czy Robert Oppenheimer. Po zakończeniu pracy w Los Alamos w 1967 r., do końca życia piastował stanowisko dziekana wydziału matematyki na Uniwersytecie Kolorado. Oprócz spiral Ulama jego najważniejszymi osiągnięciami były twierdzenia z dziedziny topologii: Borsuka-Ulama oraz Mazura-Ulama, a także rozważania nad pewnymi liczbami kardynalnymi w teorii mnogości. Ulam jest autorem lub współautorem ponad 150 prac naukowych oraz kilku książek. </p>
+				<center>
+				<div id="image">
+					<img width="256" alt="Stanislaw Ulam" src="StanislawUlam.jpg"><br />
+					<p class="description">Stanisław Ulam, ok. 1945 r.</p>
+					<p class="lic">Los Alamos National laboratory, commons.wikimedia.org</p>
+				</div>
+				</center>
+			</div>
+			<div id="introduction"  class="subcontent" style="display:none;"> 
+				<button id="closeIntroduction" class="closer" onclick="closeIntroduction();">&times </button>
+				<h2>Idea przedstawienia liczb pierwszych na spirali</h2>
+				<p>W 1963 r. Stanisław Ulam zaproponował przedstawienie kolejnych liczb naturalnych w kwadratowej spirali, jak na ilustracji. Zauważył on, że jeżeli na takiej spirali wyróżnimy wszystkie liczby pierwsze, wówczas pewne diagonalia (czyli linie skośne biegnące przez planszę) zawierają znacznie więcej liczb pierwszych niż inne. Co więcej, zjawisko zachodzi nie tylko, gdy zaczniemy spiralę od 1, ale także jeżeli początkową będzie inna liczba. Oczywiście nasuwa się pytanie, czy nie jest to zwykły przypadek (jako że kolejne wyrazy ciągu liczb pierwszych są na osi liczbowej rozłożone bardzo nieregularnie), a jedynie ludzki umysł doszukuje się prawidłowości. Gdy porównamy jednak spiralę Ulama z rozkładem wygenerowanym losowo (zobacz instrukcję korzystania z generatora), można zauważyć, iż obserwacje Ulama nie są przypadkiem. Późniejsze wyliczenia pokazały, że niektóre z diagonaliów przyjmują wartości pierwsze nawet 12 razy częściej niż średnia na planszy. W 1994 r. Robert Sacks wykonał także kołową spiralę liczb pierwszych, która jest spiralą Archimedesa, na której w równych odstępach rozmieszczono kolejne liczby naturalne. W tym przypadku można również zauważyć, że punkty na pewnych krzywych przyjmują wartości pierwsze dużo częściej niż na innych. 
+				</p>
+				<center>
+				<div id="image">
+					<img width="256" alt="Stanislaw Ulam" src="Spiral_white.png"><br />
+					<p class="description">Schemat powstawania kwadratowej spirali Ulama od 1 </p>
+					<p class="lic">Rdb, commons.wikimedia.org, CC BY-SA 3.0</p>
+				</div>
+				</center>
+				<h2>Dlaczego tak jest?</h2>
+				<p>Częściowym wytłumaczeniem opisanego zjawiska jest fakt, iż spirala jest zbudowana w taki sposób, że pewne diagonalia składają się z samych liczb parzystych, a pozostałe tylko z liczb nieparzystych, a zatem jasnym jest, że skoro diagonalia „parzyste” są wolne od liczb pierwszych (poza liczbą 2), to te „nieparzyste” muszą zawierać więcej liczb pierwszych, niż średnia na planszy. Temu stwierdzeniu jednak daleko do pełnego wytłumaczenia zagadnienia. Dokładniejsza analiza spriali pokaże, że liczby znajdujące się na danej linii skośnej, są wartościami pewnych trójmianów kwadratowych dla argumentów całkowitych. Spostrzeżenia dokonane przez Ulama są de facto jedynie graficznym przedstawieniem znanego już wcześniej faktu, że pewne funkcje kwadratowe dużo „chętniej” przyjmują wartości pierwsze. Jednym z przykładów takich wielomianów jest znaleziony przez Leonharda Eulera: <i>E(X) = X²+X+41</i>, który dla wszystkich argumentów ze zbioru {1, 2, ..., 39} przyjmuje wartości pierwsze. Dokładna przyczyna takiego zjawiska nie jest znana. </p>
+				
+				<h2>Jak szukać dużych liczb pierwszych? </h2>
+				<p>Jeżeli udowodniona zostanie prawdziwość hipotezy Bernharda Riemanna (która jest jednym z tzw. problemów milenijnych, czyli największych problemów nauki ogłoszonych w 2000 r.), będziemy znali dokładną wartość funkcji π(n), która jest zdefiniowana jako liczba liczb pierwszych w przedziale od 1 do n, a zatem znana będzie zależność rozmieszczenia liczb pierwszych na osi liczbowej. Do tej pory w szukaniu dużych liczb pierwszych (największą obecnie znaną jest 2⁸²⁵⁸⁹⁹³³− 1, która ma ponad 24 mln cyfr w zapisie dziesiętnym) najskuteczniejszą metodą jest szukanie tzw. liczb pierwszych Mersenne'a. Z kolei najbardziej skutecznym algorytmem znajdowania wszystkich liczb pierwszych w danym przedziale pozostaje opracowane w III w. p.n.e. sito Erastotenesa. Inną metodą jest z kolei obserwacja spiral Ulama dla dużych wartości i sprawdzanie pierwszeństwa kolejnych liczb na diagonaliach „chętniej” obfitujących w liczby pierwsze. Duże liczby pierwsze mają szerokie zastosowanie w teorii liczb oraz kryptografii. Z kolei wg badań Freemana Dysona, rozmieszczenie liczb pierwszych ma związek z rozkładem poziomów energetycznych jąder atomowych pierwiastków ciężkich. 
+				</p>
+				
+				<h2> Więcej na temat liczb pierwszych</h2>
+				<p>Zainteresowanych odsyłam do następujących stron i publikacji:
+				<ul>
+					<li><a href ="https://en.wikipedia.org/wiki/Ulam_spiral">Spirala Ulama w anglojęzycznej Wikipedii</a></li>
+					<li><a href ="https://pl.wikipedia.org/wiki/Liczba_pierwsza">Liczby pierwsze w polskojęzycznej Wikipedii</a></li>
+					<li><a href ="https://www.mersenne.org">Strona internetowa GIMPS - Great Internet Mersenne Prime Search</a></li>
+					<li>Adam Neugebauer, <i>Matematyka Olimpijska. Algebra i teoria liczb</i>, rozdz. 2.3. <i>Liczby pierwsze</i>, wyd. Omega</li>
+				</ul>
+				</p>
+			</div>
+			<div id="instruction"  class="subcontent" style="display:none;"> 
+				<button id="closeIntroduction" class="closer" onclick="closeInstruction();">&times </button>
+				<h2>Instrukcja obsługi generatora</h2>
+				<p>Generator umożliwia rysowanie spiral Ulama dwóch rodzajów: kwadratowej oraz kołowej na przedziale o maksymalnym rozmiarze 1 000 000 liczb oraz generowanie rozkładów losowych o liczbie elementów równej liczbie liczb pierwszych w zadanym przedziale w celu porównania rozkładu liczb pierwszych z rozkładem losowym. Program umożliwia także generowanie wielu spiral lub rozkładów losowych na sobie. Poniżej opisano krok po kroku funkcjonalność wszystkich pól panelu po lewej stronie.
+				<ol>
+					<li>Należy wybrać zakres spirali, podając parametry <b>Start</b> jako liczbę początkową oraz <b>Stop</b> jako liczbę końcową. Liczby te powinny być liczbami naturalnymi oraz wartość końcowa powinna być większa od wartości początkowej. Gdy korzystamy z opcji generatora losowego, zadany przedział wykorzystywany jest do wyliczenia ilości liczb pierwszych w nim oraz całkowitej liczby elementów przedziału.</li>
+					<li>W dalszej kolejności należy wybrać <b>typ spirali</b> (kwadratowa lub kołowa), <b>kierunek początku</b> „zwijania” spirali oraz <b>rozmiar punktów</b>. Opcja Auto dostosowuje rozmiar punktów tak, by odbiór wizualny spirali był najlepiej dostosowany do jej skali, natomiast 5-stopniowa skala dostosowuje rozmiar punktów do odstępów między elementami spirali.</li>
+					<li>Należy wybrać z listy rozwijanej <b>kolory</b>, w jakie wyświetlane będą liczby pierwsze, a także liczby złożone i etykiety liczb (o ile takie opcje włączono). Wybrać można także <b>kolor tła</b>, jednak opcja ta jest dostępna tylko przy pierwszym generowaniu spirali lub po zresetowaniu generatora.</li>
+					<li>Opcja <b>Pokazuj liczby złożone</b> umożliwia włączenie/wyłączenie wyświetlania liczb złożonych w spirali, opcja <b>Pokaż etykiety liczb</b> umożliwia włączenie/wyłączenie wyświetlania wartości liczb na punktach (opcja dostępna tylko dla spiral nie większych niż 1000 elementów).</li>
+					<li> Przycisk <b>Generuj spiralę</b> generuje spiralę Ulama wg wybranych parametrów.</li>
+					<li> Przycisk <b>Generuj rozkład losowy</b> generuje spiralę liczb, na której zaznaczono tyle punktów, ile istnieje liczb pierwszych w zadanym przedziale.</li>
+					<li> Przycisk <b>Wyczyść pole</b> czyści pole generatora i umożliwia rozpoczęcie rysowania od nowa. </li>
+					<li> Przycisk <b>Pobierz spiralę</b> umożliwia pobranie efektów pracy w formacie .png. </li>
+				</ol>
+				
+				</p>
+			</div>
+			
+			
+			<div id="form"> <!-- Tabelka danych wejściowych  -->
+				<div id="form_margin"></div>
+				<form>
+					<table>
+						<tr>
+							<td class="form_label">Start:</td>
+							<td><input type="text" id="spiral_start" value="1" class="field" ><td>
+						</tr>
+						<tr>
+							<td class="form_label">Stop: </td>	
+							<td><input type="text" id="spiral_end" value="10000" class="field" ></td>
+						</tr>
+						<tr>
+							<td class="form_label">Typ spirali:</td>	
+							<td> 
+								<select id="type" class="selector" >
+									<option value="1">Kwadratowa</option>
+									<option value="2">Kołowa</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="form_label">Zacznij od kierunku: </td>
+							<td>
+								<select id="dir" class="selector" >
+									<option value="1">prawo</option>
+									<option value="2">góra</option>
+									<option value="3">lewo</option>
+									<option value="4">dół</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="form_label">Rozmiar punktów:</td>
+							<td>
+								<select id="point_size" class="selector" >
+									<option value="0">Auto</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="form_label">Kolor liczb pierwszych:</td>
+							<td>
+								<select id="prime_style" class="selector" >
+									<option value="1">biały</option>
+									<option value="5">jasnoszary</option>
+									<option value="6" selected>ciemnoszary</option>
+									<option value="2" >czarny</option>
+									<option value="7">fioletowy</option>
+									<option value="8">niebieski</option>
+									<option value="9">błękitny</option>
+									<option value="10">miętowy</option>
+									<option value="4">zielony</option>
+									<option value="11">żółty</option>
+									<option value="12">pomarańczowy</option>
+									<option value="3">czerwony</option>
+									<option value="13">różowy</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="form_label">Kolor liczb złożonych: </td>
+							<td>
+								<select id="composite_style" class="selector" >
+									<option value="1">biały</option>
+									<option value="5">jasnoszary</option>
+									<option value="6">ciemnoszary</option>
+									<option value="2">czarny</option>
+									<option value="7">fioletowy</option>
+									<option value="8">niebieski</option>
+									<option value="9">błękitny</option>
+									<option value="10">miętowy</option>
+									<option value="4">zielony</option>
+									<option value="11" selected>żółty</option>
+									<option value="12">pomarańczowy</option>
+									<option value="3">czerwony</option>
+									<option value="13">różowy</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="form_label">Kolor liczb wygenerowanych losowo: </td>
+							<td>
+								<select id="random_style" class="selector" >
+									<option value="1">biały</option>
+									<option value="5">jasnoszary</option>
+									<option value="6">ciemnoszary</option>
+									<option value="2">czarny</option>
+									<option value="7">fioletowy</option>
+									<option value="8">niebieski</option>
+									<option value="9">błękitny</option>
+									<option value="10">miętowy</option>
+									<option value="4">zielony</option>
+									<option value="11" selected>żółty</option>
+									<option value="12">pomarańczowy</option>
+									<option value="3">czerwony</option>
+									<option value="13">różowy</option>
+								</select>	
+							</td>
+						</tr>
+						<tr>
+							<td class="form_label">Kolor etykiet: </td>
+							<td>
+								<select id="text_style" class="selector" >
+									<option value="1">biały</option>
+									<option value="5" selected>jasnoszary</option>
+									<option value="6">ciemnoszary</option>
+									<option value="2">czarny</option>
+									<option value="7">fioletowy</option>
+									<option value="8">niebieski</option>
+									<option value="9">błękitny</option>
+									<option value="10">miętowy</option>
+									<option value="4">zielony</option>
+									<option value="11">żółty</option>
+									<option value="12">pomarańczowy</option>
+									<option value="3">czerwony</option>
+									<option value="13">różowy</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="form_label">Kolor tła:</td>
+							<td>
+								<select id="background_style" class="selector" >
+									<option value="1" selected>biały</option>
+									<option value="5">jasnoszary</option>
+									<option value="6">ciemnoszary</option>
+									<option value="2">czarny</option>
+									<option value="7">fioletowy</option>
+									<option value="8">niebieski</option>
+									<option value="9">błękitny</option>
+									<option value="10">miętowy</option>
+									<option value="4">zielony</option>
+									<option value="11">żółty</option>
+									<option value="12">pomarańczowy</option>
+									<option value="3">czerwony</option>
+									<option value="13">różowy</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="form_label">Pokazuj liczby złożone: </td>
+							<td>
+								<select id="show_composite" class="selector" >
+									<option value="1">Tak</option>
+									<option value="0" selected>Nie</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="form_label">Pokaż etykiety liczb: </td>
+							<td>
+								<select id="show_values" class="selector" >
+									<option value="1">Tak</option>
+									<option value="0" selected>Nie</option>
+								</select>
+							</td>
+						</tr>
+					</table>
+				</form>
+				<center>
+					<table>
+						<tr>
+							<td><button class="button" onclick="generateSpiral();"> Generuj spiralę </button></td>
+							<td><button class="button" onclick="generateRandom();"> Generuj rozkład losowy</button></td>
+						</tr>
+						<tr>
+							<td><button class="button" onclick="clearCanvas();">Wyczyść pole</button></td>
+							<td><button class="button" onclick="downloadCanvas();">Pobierz spiralę</button></td>
+						</tr>
+					</table>
+				</center>
+				<div id="alert"></div> <!-- Alerty o błędach  -->
+			</div>
+			<div id="generator">
+				<canvas id="spiralOut" width="1000" height="1000" style="border: none; background: #FFFFFF;"></canvas>	<!-- Canvas do generowania spirali  -->
+			</div>
+			<div id="footer">
+				<p>Projekt i wykonanie: Michał Trojanowski, V Liceum Ogólnokształcące w Bielsku-Białej, 2020</p>			
+			</div>
+		</div>
+	</center>
+</body>
+</html>
